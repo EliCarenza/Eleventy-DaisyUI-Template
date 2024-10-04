@@ -4,12 +4,12 @@ A custom template for Eleventy using DaisyUI as theme control.
 ## Other custom features
 - Custom 404 page
 - Automatic copyright year - never have to update it again
+- Theme control with DaisyUI, and a theme switcher
 
 ### Coming soon:
 - Font Awesome
 - Blogging template
 - Contact form template
-- Theme switcher
 
 ## How to use this template
 1. Clone this repository
