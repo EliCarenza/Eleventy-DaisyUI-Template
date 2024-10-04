@@ -14,7 +14,7 @@ A custom template for Eleventy using DaisyUI as theme control.
 ## How to use this template
 1. Clone this repository
 2. Run `npm install`
-3. Modify the content in the `src` folder
+3. Modify the content in the `src` folder - be sure to update the `_data/site.json5` file with your information
 4. Run `npx start` to start the development server and test your changes
 5. Run `npx build` to build the project - the output will be in the `_site` folder
 

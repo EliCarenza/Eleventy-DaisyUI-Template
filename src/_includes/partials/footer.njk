@@ -1,3 +1,17 @@
-<footer class="bg-gray-800 text-white p-4 text-center">
-    &copy; {% currentYear %} My Eleventy Site
+<footer class="bg-base-200 text-base-content">
+  <div class="container mx-auto text-center text-sm p-4">
+    <nav class="flex justify-center space-x-4 mb-4">
+      <ul class="flex space-x-4">
+        {% for link in site.footerLinks %}
+          <li>
+            <a href="{{ link.url }}" class="link link-hover">{{ link.title }}</a>
+          </li>
+          {% if not loop.last %}
+            <span>|</span>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+    <p>&copy; {% currentYear %} {{ site.name }}. All rights reserved.</p>
+  </div>
 </footer>
