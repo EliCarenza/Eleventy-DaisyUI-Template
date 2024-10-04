@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <link href="/assets/css/tailwind-out.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+    {% include "partials/header.njk" %}
+    <main class="p-4">
+        {{ content | safe }}
+    </main>
+    {% include "partials/footer.njk" %}
+</body>
+</html>

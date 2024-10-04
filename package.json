@@ -1,0 +1,30 @@
+{
+  "name": "eleventy-daisyui-template",
+  "version": "0.1.0",
+  "description": "A custom template for Eleventy using DaisyUI as theme control.",
+  "author": "EliCarenza",
+  "license": "MIT-0",
+  "scripts": {
+    "start": "concurrently \"npm run tailwind-watch\" \"eleventy --serve\"",
+    "tailwind": "tailwindcss -i ./src/assets/css/tailwind-in.css -o ./src/assets/css/tailwind-out.css --minify",
+    "tailwind-watch": "tailwindcss -i ./src/assets/css/tailwind-in.css -o ./src/assets/css/tailwind-out.css --watch --minify",
+    "build": "npm run tailwind && eleventy"
+  },
+  "keywords": [
+    "11ty",
+    "daisyui",
+    "eleventy",
+    "tailwind",
+    "tailwindcss"
+  ],
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@tailwindcss/typography": "^0.5.9",
+    "concurrently": "^8.2.0",
+    "daisyui": "^3.0.22",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "luxon": "^3.5.0"
+  }
+}
