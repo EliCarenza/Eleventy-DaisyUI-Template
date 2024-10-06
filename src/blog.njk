@@ -27,7 +27,7 @@ permalink: "/blog/"
     {% for post in posts %}
       <li class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
         <a href="{{ post.url }}" class="text-2xl font-semibold text-blue-600 hover:text-blue-800">{{ post.data.title }}</a>
-        <p class="text-gray-500 mt-2">{{ post.date | date("MMMM dd, yyyy") }}</p>
+        <p class="text-gray-500 mt-2">{{ post.date | date("MMMM Do, yyyy") }}</p>
         {% if post.data.author %}
           <p class="text-gray-500">By {{ post.data.author }}</p>
         {% endif %}

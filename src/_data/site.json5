@@ -42,5 +42,5 @@
   },
 
   // Blog configuration
-  enableBlog: false // Set to true to enable the blog
+  enableBlog: true // Set to false to disable the blog
 }

@@ -1,5 +1,5 @@
 # Eleventy-DaisyUI-Template
-A custom template for Eleventy using DaisyUI as theme control.
+A custom template for Eleventy using DaisyUI for styling.
 
 ## Other custom features
 - Custom 404 page
@@ -19,8 +19,8 @@ A custom template for Eleventy using DaisyUI as theme control.
 
 ### More information
 
-### How to enable the blog and use it:
-1. Go into the `_data/site.json5` file and change the `blog` value to `true`
+### How to use the blog
+1. Go into the `_data/site.json5` file and make sure the `blog` value is set to `true`
 2. Create a new markdown file in the `blog` folder
 3. Add the following front matter to the file:
 ```markdown
@@ -34,8 +34,18 @@ layout: blogPost.njk
 4. Add your content below the front matter, this will be the content of your blog post
 5. Repeat steps 2-4 for each blog post you want to add
 
+## Screenshots
+### Homepage
+![Homepage](screenshots/home.png)
+
+### Blog
+![Blog](screenshots/blog.png)
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Authors
+- [Eli Carenza](https://github.com/elicarenza)
 
 ## Acknowledgements
 - [Eleventy](https://www.11ty.dev/)

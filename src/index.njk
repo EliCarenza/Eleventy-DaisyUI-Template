@@ -2,8 +2,20 @@
 layout: base.njk
 title: Home
 ---
-<div class="container mx-auto">
-    <h2 class="text-3xl font-bold mb-4">Welcome to My Eleventy Site</h2>
-    <p class="mb-4">This is a simple homepage using Eleventy and DaisyUI.</p>
-    <button class="btn btn-primary">Get Started</button>
+<div class="container mx-auto px-4">
+    <!-- Hero Section -->
+    <div class="hero bg-cover bg-center py-10 sm:py-20" style="background-image: url('/assets/images/hero.jpg');">
+        <div class="hero-content flex flex-col items-center sm:items-start text-center sm:text-left">
+            <h1 class="text-2xl sm:text-5xl font-bold text-white mb-4">Welcome to My Eleventy Site</h1>
+            <p class="text-base sm:text-xl text-white mb-6">This is a simple homepage using Eleventy and DaisyUI.</p>
+            <button class="btn btn-primary btn-sm sm:btn-lg mt-4 sm:mt-0">Get Started</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="py-10">
+        <h2 class="text-2xl sm:text-3xl font-bold mb-4">About Us</h2>
+        <p class="mb-4">We are dedicated to providing the best content and resources for our users. Explore our site to learn more about what we offer.</p>
+        <button class="btn btn-secondary">Learn More</button>
+    </div>
 </div>
