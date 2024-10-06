@@ -39,5 +39,8 @@
     name: "John Doe",
     email: "john.doe@example.com",
     bio: "John is a web developer and blogger who loves to share his knowledge.",
-  }
+  },
+
+  // Blog configuration
+  enableBlog: false // Set to true to enable the blog
 }

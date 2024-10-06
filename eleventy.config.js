@@ -1,5 +1,6 @@
 const json5 = require("json5");
 const tailwindConfig = require("./tailwind.config.cjs");
+const dateFilter = require("nunjucks-date-filter");
 
 module.exports = function (eleventyConfig) {
   // Copy `assets` folder, robots.txt, and favicon.ico to output
@@ -23,10 +24,13 @@ module.exports = function (eleventyConfig) {
     config.addGlobalData("themes", tailwindConfig.daisyui.themes);
   }
 
-  // Add filters
-  eleventyConfig.addFilter("date", (dateObj) => {
-    return dateObj.toLocaleDateString();
+  // Add blog data collection
+  eleventyConfig.addCollection("blog", function (collectionApi) {
+    return collectionApi.getFilteredByGlob("src/blog/*.md");
   });
+
+  // Add filters
+  eleventyConfig.addFilter("date", dateFilter);
 
   // Add shortcodes
   eleventyConfig.addShortcode("currentYear", () => {

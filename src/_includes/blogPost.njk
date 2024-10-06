@@ -1,0 +1,17 @@
+---
+layout: base.njk
+---
+
+<article class="container mx-auto px-4 py-8">
+  <header class="mb-8">
+    <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
+    <p class="text-gray-500">{{ date | date("MMMM Do, YYYY") }}</p>
+    {% if author %}
+      <p class="text-gray-500">By {{ author }}</p>
+    {% endif %}
+  </header>
+
+  <div class="prose max-w-none">
+    {{ content | safe }}
+  </div>
+</article>

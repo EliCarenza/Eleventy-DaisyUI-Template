@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "json5": "^2.2.3",
-    "luxon": "^3.5.0"
+    "luxon": "^3.5.0",
+    "nunjucks-date-filter": "^0.1.1"
   }
 }

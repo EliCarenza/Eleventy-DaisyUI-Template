@@ -1,0 +1,52 @@
+---
+layout: base.njk
+pagination:
+  data: collections.blog
+  size: 5
+  alias: posts
+  addAllPagesToCollections: true
+permalink: "/blog/"
+---
+
+{% set pageNumber = 0 %}
+{% if "?" in page.url %}
+  {% set params = page.url.split('?')[1] %}
+  {% set queryParams = params.split('&') %}
+  {% for param in queryParams %}
+    {% set keyValue = param.split('=') %}
+    {% if keyValue[0] == 'page' %}
+      {% set pageNumber = keyValue[1] | int %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<div class="container mx-auto px-4 py-8">
+  <h1 class="text-4xl font-bold mb-8">Blog</h1>
+
+  <ul class="space-y-8">
+    {% for post in posts %}
+      <li class="bg-white shadow-md rounded-lg p-6 hover:shadow-lg transition-shadow duration-300">
+        <a href="{{ post.url }}" class="text-2xl font-semibold text-blue-600 hover:text-blue-800">{{ post.data.title }}</a>
+        <p class="text-gray-500 mt-2">{{ post.date | date("MMMM dd, yyyy") }}</p>
+        {% if post.data.author %}
+          <p class="text-gray-500">By {{ post.data.author }}</p>
+        {% endif %}
+        <p class="mt-4 text-gray-700">{{ post.templateContent | safe | truncate(200, true, "…") }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="mt-8 flex justify-center space-x-2">
+    {% if pageNumber > 0 %}
+      <a href="/blog/?page={{ pageNumber - 1 }}" class="btn btn-primary">Previous</a>
+    {% endif %}
+
+    {% for page in pagination.pages %}
+      <a href="/blog/?page={{ loop.index0 }}" class="btn {% if pageNumber == loop.index0 %}btn-active{% else %}btn-outline{% endif %}">{{ loop.index0 + 1 }}</a>
+    {% endfor %}
+
+    {% if pageNumber < pagination.pages.length - 1 %}
+      <a href="/blog/?page={{ pageNumber + 1 }}" class="btn btn-primary">Next</a>
+    {% endif %}
+  </div>
+</div>
