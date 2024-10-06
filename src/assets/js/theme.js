@@ -1,32 +1,53 @@
-(function () {
-  // Check for saved theme in localStorage
-  let currentTheme = localStorage.getItem('theme');
-
-  // If no saved theme, check system preference
-  if (!currentTheme) {
-    const prefersDark = window.matchMedia(
-      '(prefers-color-scheme: dark)'
-    ).matches;
-    currentTheme = prefersDark ? 'dark' : 'light';
-  }
-
-  // Set the theme
-  document.documentElement.setAttribute('data-theme', currentTheme);
-})();
-
 document.addEventListener('DOMContentLoaded', function () {
   const themeSelect = document.getElementById('theme-select');
+  const dropdownButton = document.getElementById('dropdownButton');
+  const themeToggleButton = document.getElementById('themeToggleButton');
+  const sunIcon = document.getElementById('sunIcon');
+  const moonIcon = document.getElementById('moonIcon');
 
-  // Set the theme select value to the current theme
-  const currentTheme = document.documentElement.getAttribute('data-theme');
+  function updateTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+
+    if (theme === 'dark') {
+      sunIcon.classList.add('hidden');
+      moonIcon.classList.remove('hidden');
+    } else {
+      sunIcon.classList.remove('hidden');
+      moonIcon.classList.add('hidden');
+    }
+
+    if (themeSelect) {
+      themeSelect.value = theme;
+    }
+  }
+
+  function setInitialTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    const currentTheme = savedTheme || document.documentElement.getAttribute('data-theme') || 'light';
+    updateTheme(currentTheme);
+  }
+
   if (themeSelect) {
-    themeSelect.value = currentTheme;
-
-    // Update theme on selection change
     themeSelect.addEventListener('change', function () {
-      const selectedTheme = themeSelect.value;
-      document.documentElement.setAttribute('data-theme', selectedTheme);
-      localStorage.setItem('theme', selectedTheme);
+      updateTheme(themeSelect.value);
     });
   }
+
+  if (dropdownButton) {
+    dropdownButton.addEventListener('click', function () {
+      const dropdownMenu = document.getElementById('dropdownMenu');
+      dropdownMenu.classList.toggle('hidden');
+    });
+  }
+
+  if (themeToggleButton) {
+    themeToggleButton.addEventListener('click', function () {
+      const isLightTheme = !sunIcon.classList.contains('hidden');
+      const newTheme = isLightTheme ? 'dark' : 'light';
+      updateTheme(newTheme);
+    });
+  }
+
+  setInitialTheme();
 });

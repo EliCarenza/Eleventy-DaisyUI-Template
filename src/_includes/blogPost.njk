@@ -4,6 +4,11 @@ layout: base.njk
 
 <article class="container mx-auto px-4 py-8">
   <header class="mb-8">
+    <nav class="mb-4">
+      <a href="/blog/" class="text-primary hover:text-primary-focus">
+        &larr; Back to the Blog
+      </a>
+    </nav>
     <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
     <p class="text-gray-500">{{ date | date("MMMM Do, YYYY") }}</p>
     {% if author %}

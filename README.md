@@ -55,5 +55,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Changelog
 
+### 1.1.0
+- Better mobile support in the header
+- Fix the blog post list template
+- Add a "back to the blog" breadcrumb to the blog post template
+
 ### 1.0.0
 - Initial release
