@@ -41,6 +41,9 @@ layout: blogPost.njk
 ### Blog
 ![Blog](screenshots/blog.png)
 
+### Mobile
+![Mobile](screenshots/mobile.png)
+
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
