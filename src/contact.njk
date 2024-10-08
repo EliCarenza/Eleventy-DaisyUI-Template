@@ -1,0 +1,41 @@
+---
+layout: base.njk
+title: Contact Us
+---
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-4xl font-bold mb-8">Contact Us</h1>
+    <div class="bg-base-100 shadow-md rounded-lg p-6">
+        <p class="text-lg mb-4">
+            If you have any questions or feedback, please fill out the form below to get in touch with us. This form is currently a demo and does not submit data. Follow the instructions below to set it up.
+        </p>
+        <form class="space-y-4">
+            <div>
+                <label for="name" class="block text-sm font-medium text-base-content">Name</label>
+                <input type="text" id="name" name="name" class="input input-bordered w-full" placeholder="Your Name">
+            </div>
+            <div>
+                <label for="email" class="block text-sm font-medium text-base-content">Email</label>
+                <input type="email" id="email" name="email" class="input input-bordered w-full" placeholder="Your Email">
+            </div>
+            <div>
+                <label for="message" class="block text-sm font-medium text-base-content">Message</label>
+                <textarea id="message" name="message" class="textarea textarea-bordered w-full" rows="4" placeholder="Your Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        <h2 class="text-2xl font-semibold mt-8 mb-4">How to Set Up the Contact Form</h2>
+        <p class="text-lg mb-4">
+            To set up the contact form, you can use a service like Formspree, Netlify Forms, or any other form handling service. Here are the steps to set it up with Formspree:
+        </p>
+        <ol class="list-decimal list-inside mb-4">
+            <li>Go to <a href="https://formspree.io/" class="link link-hover text-primary">Formspree</a> and sign up for an account.</li>
+            <li>Create a new form and copy the form endpoint URL.</li>
+            <li>Replace the <code>action</code> attribute of the form tag with the Formspree endpoint URL.</li>
+            <li>Add a <code>method="POST"</code> attribute to the form tag.</li>
+            <li>Optionally, add a hidden input field for the redirect URL after form submission, or set up a CAPTCHA.</li>
+        </ol>
+        <p class="text-lg mb-4">
+            Once you have set up the form, it will be able to submit data to the specified endpoint.
+        </p>
+    </div>
+</div>

@@ -1,21 +1,23 @@
 # Eleventy-DaisyUI-Template
-A custom template for Eleventy using DaisyUI for styling.
+A custom responsive template for Eleventy using DaisyUI.
 
 ## Other custom features
 - Custom 404 page
 - Automatic copyright year - never have to update it again
 - Theme control with DaisyUI, and a theme switcher
+- About page
+- Demo contact form page
+- Mobile support in the header
 
 ### Coming soon:
 - Font Awesome
-- Contact form template
 
 ## How to use this template
 1. Clone this repository
 2. Run `npm install`
-3. Modify the content in the `src` folder - be sure to update the `_data/site.json5` file with your information
-4. Run `npx start` to start the development server and test your changes
-5. Run `npx build` to build the project - the output will be in the `_site` folder
+3. Modify the content in the `src` folder - be sure to update the `_data/site.json5` file with your site's information
+4. Run `npm start` to start the development server and test your changes
+5. Run `npm build` to build the project - the output will be in the `_site` folder
 
 ### More information
 
@@ -45,7 +47,7 @@ layout: blogPost.njk
 ![Mobile](screenshots/mobile.png)
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
 ## Authors
 - [Eli Carenza](https://github.com/elicarenza)
@@ -57,6 +59,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Tailwind CSS](https://tailwindcss.com/)
 
 ## Changelog
+
+### 1.2.0
+- Add about page
+- Add demo contact form page
 
 ### 1.1.0
 - Better mobile support in the header

@@ -1,17 +1,27 @@
 const json5 = require("json5");
 const tailwindConfig = require("./tailwind.config.cjs");
 const dateFilter = require("nunjucks-date-filter");
+const fs = require("fs");
+const path = require("path");
+
+const ASSETS_PATH = "src/assets";
+const ROBOTS_TXT_PATH = "src/robots.txt";
+const FAVICON_PATH = "src/favicon.ico";
+const SITE_DATA_PATH = path.join(__dirname, "src/_data/site.json5");
+
+function addPassthroughs(config) {
+  config.addPassthroughCopy(ASSETS_PATH);
+  config.addPassthroughCopy(ROBOTS_TXT_PATH);
+  config.addPassthroughCopy(FAVICON_PATH);
+}
+
+function addGlobalData(config) {
+  config.addGlobalData("themes", tailwindConfig.daisyui.themes);
+}
 
 module.exports = function (eleventyConfig) {
-  // Copy `assets` folder, robots.txt, and favicon.ico to output
-  function addPassthroughs(config) {
-    config.addPassthroughCopy("src/assets");
-    config.addPassthroughCopy("src/robots.txt");
-    config.addPassthroughCopy("src/favicon.ico");
-  }
-
   // Watch for changes in the `assets` folder
-  eleventyConfig.addWatchTarget("src/assets");
+  eleventyConfig.addWatchTarget(ASSETS_PATH);
 
   // Set layout for pages
   eleventyConfig.addLayoutAlias("default", "base.njk");
@@ -19,13 +29,8 @@ module.exports = function (eleventyConfig) {
   // Add a custom data file extension handler for JSON5
   eleventyConfig.addDataExtension("json5", (contents) => json5.parse(contents));
 
-  // Function to add global data
-  function addGlobalData(config) {
-    config.addGlobalData("themes", tailwindConfig.daisyui.themes);
-  }
-
   // Add blog data collection
-  eleventyConfig.addCollection("blog", function (collectionApi) {
+  eleventyConfig.addCollection("blog", (collectionApi) => {
     return collectionApi.getFilteredByGlob("src/blog/*.md");
   });
 
@@ -33,9 +38,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("date", dateFilter);
 
   // Add shortcodes
-  eleventyConfig.addShortcode("currentYear", () => {
-    return new Date().getFullYear();
-  });
+  eleventyConfig.addShortcode("currentYear", () => new Date().getFullYear());
 
   // Add passthroughs, global data
   addPassthroughs(eleventyConfig);

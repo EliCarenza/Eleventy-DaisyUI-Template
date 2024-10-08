@@ -1,7 +1,7 @@
 {
   "name": "eleventy-daisyui-template",
-  "version": "0.1.1",
-  "description": "A custom template for Eleventy using DaisyUI as theme control.",
+  "version": "1.2.0",
+  "description": "A custom responsive template for Eleventy using DaisyUI.",
   "author": "EliCarenza",
   "license": "MIT-0",
   "scripts": {

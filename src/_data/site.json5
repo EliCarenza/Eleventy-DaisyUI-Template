@@ -1,12 +1,12 @@
 {
   // Basic site information
-  name: "My Awesome Website",
+  name: "My Example Website",
   description: "A brief description of my awesome website.",
   url: "https://www.myawesomewebsite.com",
 
   // SEO meta data
   meta: {
-    description: "This is an awesome website about web development and blogging.",
+    description: "This is an example website about web development and blogging.",
     keywords: ["web development", "blogging", "technology", "tutorials"],
     ogImage: "https://www.myawesomewebsite.com/path/to/og-image.jpg"
   },
@@ -18,7 +18,7 @@
     instagram: "https://instagram.com/myawesomewebsite",
   },
 
-  // Navigation links
+  // Main Menu navigation links
   navigation: [
     { title: "Home", url: "/" },
     { title: "About", url: "/about/" },
@@ -26,11 +26,10 @@
     { title: "Contact", url: "/contact/" },
   ],
 
-  // Footer links
+  // Footer navigation links
   footerLinks: [
     { title: "Terms of Service", url: "/terms-of-service/" },
     { title: "Privacy Policy", url: "/privacy-policy/" },
-    { title: "Sitemap", url: "/sitemap/" },
     { title: "Contact", url: "/contact/" },
   ],
 
