@@ -1,13 +1,10 @@
 const json5 = require("json5");
 const tailwindConfig = require("./tailwind.config.cjs");
 const dateFilter = require("nunjucks-date-filter");
-const fs = require("fs");
-const path = require("path");
 
 const ASSETS_PATH = "src/assets";
 const ROBOTS_TXT_PATH = "src/robots.txt";
 const FAVICON_PATH = "src/favicon.ico";
-const SITE_DATA_PATH = path.join(__dirname, "src/_data/site.json5");
 
 function addPassthroughs(config) {
   config.addPassthroughCopy(ASSETS_PATH);
