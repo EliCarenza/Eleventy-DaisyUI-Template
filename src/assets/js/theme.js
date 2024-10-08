@@ -1,53 +1,36 @@
-document.addEventListener('DOMContentLoaded', function () {
-  const themeSelect = document.getElementById('theme-select');
-  const dropdownButton = document.getElementById('dropdownButton');
-  const themeToggleButton = document.getElementById('themeToggleButton');
-  const sunIcon = document.getElementById('sunIcon');
-  const moonIcon = document.getElementById('moonIcon');
+// Theme changer code
+(function () {
+  const initializeTheme = () => {
+    let currentTheme = localStorage.getItem("theme");
 
-  function updateTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-
-    if (theme === 'dark') {
-      sunIcon.classList.add('hidden');
-      moonIcon.classList.remove('hidden');
-    } else {
-      sunIcon.classList.remove('hidden');
-      moonIcon.classList.add('hidden');
+    if (!currentTheme) {
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      currentTheme = prefersDark ? "dark" : "light";
     }
 
-    if (themeSelect) {
-      themeSelect.value = theme;
-    }
-  }
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    updateThemeToggleButton(currentTheme);
+  };
 
-  function setInitialTheme() {
-    const savedTheme = localStorage.getItem('theme');
-    const currentTheme = savedTheme || document.documentElement.getAttribute('data-theme') || 'light';
-    updateTheme(currentTheme);
-  }
+  const toggleTheme = () => {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    updateThemeToggleButton(newTheme);
+  };
 
-  if (themeSelect) {
-    themeSelect.addEventListener('change', function () {
-      updateTheme(themeSelect.value);
-    });
-  }
+  const updateThemeToggleButton = (theme) => {
+    const themeToggleButton = document.getElementById("themeToggleButton");
+    const isDarkTheme = theme === "dark";
+    themeToggleButton.setAttribute("aria-pressed", isDarkTheme);
+    themeToggleButton.innerHTML = isDarkTheme ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  };
 
-  if (dropdownButton) {
-    dropdownButton.addEventListener('click', function () {
-      const dropdownMenu = document.getElementById('dropdownMenu');
-      dropdownMenu.classList.toggle('hidden');
-    });
-  }
+  document.addEventListener("DOMContentLoaded", () => {
+    initializeTheme();
 
-  if (themeToggleButton) {
-    themeToggleButton.addEventListener('click', function () {
-      const isLightTheme = !sunIcon.classList.contains('hidden');
-      const newTheme = isLightTheme ? 'dark' : 'light';
-      updateTheme(newTheme);
-    });
-  }
-
-  setInitialTheme();
-});
+    const themeToggleButton = document.getElementById("themeToggleButton");
+    themeToggleButton.addEventListener("click", toggleTheme);
+  });
+})();

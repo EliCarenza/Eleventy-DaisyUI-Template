@@ -8,6 +8,21 @@
         <meta name="keywords" content="{{ meta.keywords | default([]) | join(', ') }}">
         <meta name="author" content="{{ author.name }}">
         <link href="/assets/css/tailwind-out.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "url": "{{ url }}",
+                "name": "{{ title }}",
+                "author": {
+                    "@type": "Person",
+                    "name": "{{ author }}"
+                },
+                "description": "{{ description }}"
+            }
+        </script>
 
         <!-- Open Graph Meta Tags -->
         <meta property="og:title" content="{{ title }}">
@@ -22,7 +37,8 @@
         <meta name="twitter:description" content="{{ meta.description }}">
         <meta name="twitter:url" content="{{ url }}">
         <meta name="twitter:image" content="{{ meta.ogImage }}">
-        <meta name="twitter:site" content="@myawesomewebsite"> <!-- Update with actual Twitter handle -->
+        <meta name="twitter:site" content="@myawesomewebsite">
+        <!-- Update with actual Twitter handle -->
     </head>
     <body>
         {% include "partials/header.njk" %}
