@@ -8,9 +8,9 @@ A custom responsive template for Eleventy using DaisyUI.
 - About page
 - Demo contact form page
 - Mobile support in the header
-
-### Coming soon:
-- Font Awesome
+- Blog support
+- Fontawesome icons
+- Accessibility improvements
 
 ## How to use this template
 1. Clone this repository
@@ -40,9 +40,6 @@ layout: blogPost.njk
 ### Homepage
 ![Homepage](screenshots/home.png)
 
-### Blog
-![Blog](screenshots/blog.png)
-
 ### Mobile
 ![Mobile](screenshots/mobile.png)
 
@@ -59,6 +56,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 - [Tailwind CSS](https://tailwindcss.com/)
 
 ## Changelog
+
+### 1.3.0
+- Add Fontawesome icons
+- Accessibility improvements
+- Example Terms of Service and Privacy Policy pages
 
 ### 1.2.0
 - Add about page

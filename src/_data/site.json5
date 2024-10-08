@@ -31,6 +31,7 @@
     { title: "Terms of Service", url: "/terms-of-service/" },
     { title: "Privacy Policy", url: "/privacy-policy/" },
     { title: "Contact", url: "/contact/" },
+    { title: "GitHub", url: "https://github.com/EliCarenza/Eleventy-DaisyUI-Template" },
   ],
 
   // Author information

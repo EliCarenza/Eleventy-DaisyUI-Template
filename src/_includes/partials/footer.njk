@@ -1,13 +1,13 @@
-<footer class="bg-base-200 text-base-content">
+<footer class="bg-base-200 text-base-content" role="contentinfo">
   <div class="container mx-auto text-center text-sm p-4">
-    <nav class="flex justify-center space-x-4 mb-4">
+    <nav class="flex justify-center space-x-4 mb-4" aria-label="Footer navigation">
       <ul class="flex space-x-4">
         {% for link in site.footerLinks %}
           <li>
             <a href="{{ link.url }}" class="link link-hover">{{ link.title }}</a>
           </li>
           {% if not loop.last %}
-            <span>|</span>
+            <span aria-hidden="true">|</span>
           {% endif %}
         {% endfor %}
       </ul>

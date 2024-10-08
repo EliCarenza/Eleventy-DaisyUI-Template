@@ -8,22 +8,22 @@ title: Contact Us
         <p class="text-lg mb-4">
             If you have any questions or feedback, please fill out the form below to get in touch with us. This form is currently a demo and does not submit data. Follow the instructions below to set it up.
         </p>
-        <form class="space-y-4">
+        <form class="space-y-4" aria-labelledby="contact-form-title">
             <div>
                 <label for="name" class="block text-sm font-medium text-base-content">Name</label>
-                <input type="text" id="name" name="name" class="input input-bordered w-full" placeholder="Your Name">
+                <input type="text" id="name" name="name" class="input input-bordered w-full" placeholder="Your Name" aria-required="true">
             </div>
             <div>
                 <label for="email" class="block text-sm font-medium text-base-content">Email</label>
-                <input type="email" id="email" name="email" class="input input-bordered w-full" placeholder="Your Email">
+                <input type="email" id="email" name="email" class="input input-bordered w-full" placeholder="Your Email" aria-required="true">
             </div>
             <div>
                 <label for="message" class="block text-sm font-medium text-base-content">Message</label>
-                <textarea id="message" name="message" class="textarea textarea-bordered w-full" rows="4" placeholder="Your Message"></textarea>
+                <textarea id="message" name="message" class="textarea textarea-bordered w-full" rows="4" placeholder="Your Message" aria-required="true"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary" aria-label="Submit the form">Submit</button>
         </form>
-        <h2 class="text-2xl font-semibold mt-8 mb-4">How to Set Up the Contact Form</h2>
+        <h2 id="contact-form-title" class="text-2xl font-semibold mt-8 mb-4">How to Set Up the Contact Form</h2>
         <p class="text-lg mb-4">
             To set up the contact form, you can use a service like Formspree, Netlify Forms, or any other form handling service. Here are the steps to set it up with Formspree:
         </p>

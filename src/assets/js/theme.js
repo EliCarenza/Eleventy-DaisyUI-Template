@@ -1,10 +1,12 @@
-// Theme changer code
+// Theme changer and menu dropdown code
 (function () {
   const initializeTheme = () => {
     let currentTheme = localStorage.getItem("theme");
 
     if (!currentTheme) {
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
       currentTheme = prefersDark ? "dark" : "light";
     }
 
@@ -24,7 +26,16 @@
     const themeToggleButton = document.getElementById("themeToggleButton");
     const isDarkTheme = theme === "dark";
     themeToggleButton.setAttribute("aria-pressed", isDarkTheme);
-    themeToggleButton.innerHTML = isDarkTheme ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+    themeToggleButton.innerHTML = isDarkTheme
+      ? '<i class="fas fa-sun"></i>'
+      : '<i class="fas fa-moon"></i>';
+  };
+
+  const toggleDropdownMenu = () => {
+    const dropdownMenu = document.getElementById("dropdownMenu");
+    const isExpanded = dropdownMenu.classList.toggle("hidden");
+    const dropdownButton = document.getElementById("dropdownButton");
+    dropdownButton.setAttribute("aria-expanded", !isExpanded);
   };
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -32,5 +43,8 @@
 
     const themeToggleButton = document.getElementById("themeToggleButton");
     themeToggleButton.addEventListener("click", toggleTheme);
+
+    const dropdownButton = document.getElementById("dropdownButton");
+    dropdownButton.addEventListener("click", toggleDropdownMenu);
   });
 })();

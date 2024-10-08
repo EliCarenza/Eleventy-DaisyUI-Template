@@ -2,21 +2,25 @@
 layout: base.njk
 ---
 
-<article class="container mx-auto px-4 py-8">
+<article class="container mx-auto px-4 py-8 bg-base-100 dark:bg-base-900 rounded-lg shadow-lg" role="article">
   <header class="mb-8">
-    <nav class="mb-4">
-      <a href="/blog/" class="text-primary hover:text-primary-focus">
-        &larr; Back to the Blog
+    <nav class="mb-4" aria-label="Breadcrumb">
+      <a href="/blog/" class="text-primary hover:text-primary-focus flex items-center" aria-label="Back to the Blog">
+        <i class="fas fa-arrow-left mr-2"></i>
+        Back to the Blog
       </a>
     </nav>
-    <h1 class="text-4xl font-bold mb-4">{{ title }}</h1>
-    <p class="text-gray-500">{{ date | date("MMMM Do, YYYY") }}</p>
+    {% if headerImage %}
+      <img src="{{ headerImage }}" alt="{{ headerImageAlt }}" class="w-full h-auto mb-4 rounded-lg shadow-md">
+    {% endif %}
+    <h1 class="text-4xl font-bold mb-4 text-base-content dark:text-base-content-dark">{{ title }}</h1>
+    <p class="text-base-content dark:text-base-content-dark">{{ date | date("MMMM Do, YYYY") }}</p>
     {% if author %}
-      <p class="text-gray-500">By {{ author }}</p>
+      <p class="text-base-content dark:text-base-content-dark">By {{ author }}</p>
     {% endif %}
   </header>
 
-  <div class="prose max-w-none">
+  <div class="prose max-w-none dark:prose-invert text-base-content dark:text-base-content-dark">
     {{ content | safe }}
   </div>
 </article>

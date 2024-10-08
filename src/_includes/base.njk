@@ -42,7 +42,7 @@
     </head>
     <body>
         {% include "partials/header.njk" %}
-        <main class="p-4">
+        <main class="p-4" role="main" aria-label="Main content">
             {{ content | safe }}
         </main>
         {% include "partials/footer.njk" %}
