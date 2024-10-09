@@ -33,7 +33,7 @@ The template is fully responsive and includes a theme switcher for light and dar
 2. Run `npm install`
 3. Modify the content in the `src` folder - be sure to update the `_data/site.json5` file with your site's information
 4. Run `npm start` to start the development server and test your changes
-5. Run `npm build` to build the project - the output will be in the `_site` folder
+5. Run `npm run build` to build the project - the output will be in the `_site` folder
 
 ### More information
 
