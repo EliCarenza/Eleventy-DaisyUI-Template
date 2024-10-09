@@ -30,10 +30,10 @@
                 {% endfor %}
             </ul>
         </nav>
-        <div class="ml-4">
-            <button id="themeToggleButton" class="btn btn-ghost btn-lg md:btn-lg" aria-pressed="false" aria-label="Toggle theme">
-                <i class="fas fa-moon h-8 w-8 md:text-lg" aria-hidden="true"></i>
-            </button>
-        </div>
+        <label class="swap swap-rotate ml-4">
+            <input type="checkbox" id="themeToggleButton" class="theme-controller" value="dark"/>
+            <i class="fas fa-sun swap-off h-10 w-10 fill-current"></i>
+            <i class="fas fa-moon swap-on h-10 w-10 fill-current"></i>
+        </label>
     </div>
 </header>

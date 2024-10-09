@@ -57,6 +57,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 ## Changelog
 
+### 1.3.1
+- Update theme toggle to use DaisyUI component
+
 ### 1.3.0
 - Add Fontawesome icons
 - Accessibility improvements
