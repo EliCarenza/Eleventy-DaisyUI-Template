@@ -1,28 +1,28 @@
 {
   // Basic site information
-  name: "My Example Website",
-  description: "A brief description of my awesome website.",
-  url: "https://www.myawesomewebsite.com",
+  name: "John Doe Portfolio",
+  description: "A professional portfolio showcasing the work and skills of John Doe.",
+  url: "https://www.johndoeportfolio.com",
 
   // SEO meta data
   meta: {
-    description: "This is an example website about web development and blogging.",
-    keywords: ["web development", "blogging", "technology", "tutorials"],
-    ogImage: "https://www.myawesomewebsite.com/path/to/og-image.jpg"
+    description: "John Doe's professional portfolio featuring web development projects, design work, and more.",
+    keywords: ["portfolio", "web development", "design", "projects", "John Doe"],
+    ogImage: "https://www.johndoeportfolio.com/path/to/og-image.jpg"
   },
 
   // Social media links
   social: {
-    twitter: "https://twitter.com/myawesomewebsite",
-    facebook: "https://facebook.com/myawesomewebsite",
-    instagram: "https://instagram.com/myawesomewebsite",
+    twitter: "https://twitter.com/example",
+    linkedin: "https://linkedin.com/in/example",
+    github: "https://github.com/example",
   },
 
   // Main Menu navigation links
   navigation: [
     { title: "Home", url: "/" },
     { title: "About", url: "/about/" },
-    { title: "Blog", url: "/blog/" },
+    { title: "Portfolio", url: "/#portfolio" },
     { title: "Contact", url: "/contact/" },
   ],
 
@@ -31,16 +31,16 @@
     { title: "Terms of Service", url: "/terms-of-service/" },
     { title: "Privacy Policy", url: "/privacy-policy/" },
     { title: "Contact", url: "/contact/" },
-    { title: "GitHub", url: "https://github.com/EliCarenza/Eleventy-DaisyUI-Template" },
+    { title: "GitHub", url: "https://github.com/example" },
   ],
 
   // Author information
   author: {
     name: "John Doe",
     email: "john.doe@example.com",
-    bio: "John is a web developer and blogger who loves to share his knowledge.",
+    bio: "John is a web developer and designer with a passion for creating beautiful and functional websites.",
   },
 
   // Blog configuration
-  enableBlog: true // Set to false to disable the blog
+  enableBlog: false // Set to true if you want to include a blog
 }

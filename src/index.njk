@@ -4,18 +4,73 @@ title: Home
 ---
 <div class="container mx-auto px-4">
     <!-- Hero Section -->
-    <div class="hero bg-cover bg-center py-10 sm:py-20" style="background-image: url('/assets/images/hero.jpg');" role="banner" aria-label="Hero section with welcome message">
-        <div class="hero-content flex flex-col items-center sm:items-start text-center sm:text-left">
-            <h1 class="text-2xl sm:text-5xl font-bold text-white mb-4">Welcome to My Eleventy Site</h1>
-            <p class="text-base sm:text-xl text-white mb-6">This is a simple homepage using Eleventy and DaisyUI.</p>
-            <button class="btn btn-primary btn-sm sm:btn-lg mt-4 sm:mt-0" aria-label="Get Started">Get Started</button>
+    <section class="hero min-h-[50vh] relative" style="background-image: url('/assets/images/hero.jpg');" role="banner" aria-label="Hero section with welcome message">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <div class="relative z-10 flex flex-col items-center sm:items-start text-center sm:text-left">
+            <h1 class="text-2xl sm:text-5xl font-bold text-white mb-4" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Welcome to My Professional Portfolio</h1>
+            <p class="text-base sm:text-xl text-white mb-6" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Showcasing my work and skills using Eleventy and DaisyUI.</p>
+            <a href="/contact" class="btn btn-primary btn-sm sm:btn-lg mt-4 sm:mt-0" aria-label="Contact Me">Contact Me</a>
         </div>
-    </div>
+    </section>
 
-    <!-- Main Content -->
-    <div class="py-10">
-        <h2 class="text-2xl sm:text-3xl font-bold mb-4">About Us</h2>
-        <p class="mb-4">We are dedicated to providing the best content and resources for our users. Explore our site to learn more about what we offer.</p>
+    <!-- About Section -->
+    <section class="py-10" aria-labelledby="about-heading">
+        <h2 id="about-heading" class="text-2xl sm:text-3xl font-bold mb-4">About Me</h2>
+        <p class="mb-4">I am a dedicated professional with a passion for creating high-quality content and resources. Explore my site to learn more about my work and skills.</p>
         <button class="btn btn-secondary" aria-label="Learn More">Learn More</button>
-    </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-10" aria-labelledby="services-heading">
+        <h2 id="services-heading" class="text-2xl sm:text-3xl font-bold mb-4">Services</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="card bg-base-100 border border-base-300 shadow-lg">
+                <div class="card-body text-base-content">
+                    <h3 class="card-title">Web Development</h3>
+                    <p>Creating responsive and modern websites.</p>
+                </div>
+            </div>
+            <div class="card bg-base-100 border border-base-300 shadow-lg">
+                <div class="card-body text-base-content">
+                    <h3 class="card-title">Graphic Design</h3>
+                    <p>Designing visually appealing graphics and layouts.</p>
+                </div>
+            </div>
+            <div class="card bg-base-100 border border-base-300 shadow-lg">
+                <div class="card-body text-base-content">
+                    <h3 class="card-title">SEO Optimization</h3>
+                    <p>Improving website visibility on search engines.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-10" aria-labelledby="portfolio-heading">
+        <h2 id="portfolio-heading" class="text-2xl sm:text-3xl font-bold mb-4">Portfolio</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div class="card bg-base-100 border border-base-300 shadow-lg">
+                <figure><img src="/assets/images/portfolio1.jpg" alt="Project 1"></figure>
+                <div class="card-body text-base-content">
+                    <h3 class="card-title">Project 1</h3>
+                    <p>A brief description of the project.</p>
+                </div>
+            </div>
+            <div class="card bg-base-100 border border-base-300 shadow-lg">
+                <figure><img src="/assets/images/portfolio2.jpg" alt="Project 2"></figure>
+                <div class="card-body text-base-content">
+                    <h3 class="card-title">Project 2</h3>
+                    <p>A brief description of the project.</p>
+                </div>
+            </div>
+            <div class="card bg-base-100 border border-base-300 shadow-lg">
+                <figure><img src="/assets/images/portfolio3.jpg" alt="Project 3"></figure>
+                <div class="card-body text-base-content">
+                    <h3 class="card-title">Project 3</h3>
+                    <p>A brief description of the project.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
