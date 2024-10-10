@@ -21,11 +21,13 @@ The template is fully responsive and includes a theme switcher for light and dar
 - Automatic copyright year - never have to update it again
 - Theme control with DaisyUI, and a theme switcher
 - About page
+- Demo terms of service and privacy policy pages
 - Demo contact form page
 - Mobile support in the header
 - Blog support
 - Fontawesome icons
 - Accessibility improvements
+- Automatic sitemap generation
 
 ## How to use this template
 
@@ -81,6 +83,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 - [Tailwind CSS](https://tailwindcss.com/)
 
 ## Changelog
+
+### 1.4.0
+
+- Add sitemap generation
 
 ### 1.3.1
 
