@@ -10,6 +10,7 @@ A custom responsive template for Eleventy using DaisyUI.
 - Demo contact form page
 - Mobile support in the header
 - Blog support
+- Scheduling blog posts and drafts
 - Fontawesome icons
 - Accessibility improvements
 - Automatic sitemap generation
@@ -59,8 +60,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 ## Changelog
 
-### 1.4.0
+### 1.5.0
+- Add blog scheduling and drafts
+- Cleanup the Eleventy config file
 
+### 1.4.0
 - Add sitemap generation
 
 ### 1.3.1

@@ -1,19 +1,28 @@
 const json5 = require("json5");
 const tailwindConfig = require("./tailwind.config.cjs");
-const dateFilter = require("nunjucks-date-filter");
 
 const ASSETS_PATH = "src/assets";
 const ROBOTS_TXT_PATH = "src/robots.txt";
 const FAVICON_PATH = "src/favicon.ico";
+const BLOG_GLOB = "src/blog/**/*.md";
 
 function addPassthroughs(config) {
-  config.addPassthroughCopy(ASSETS_PATH);
-  config.addPassthroughCopy(ROBOTS_TXT_PATH);
-  config.addPassthroughCopy(FAVICON_PATH);
+  const paths = [ASSETS_PATH, ROBOTS_TXT_PATH, FAVICON_PATH];
+  paths.forEach((path) => config.addPassthroughCopy(path));
 }
 
 function addGlobalData(config) {
   config.addGlobalData("themes", tailwindConfig.daisyui.themes);
+}
+
+function excludeDrafts(item) {
+  return !item.data.draft;
+}
+
+function isTodayOrPast(item) {
+  const today = new Date();
+  const postDate = new Date(item.date);
+  return postDate <= today;
 }
 
 module.exports = function (eleventyConfig) {
@@ -26,22 +35,30 @@ module.exports = function (eleventyConfig) {
   // Add a custom data file extension handler for JSON5
   eleventyConfig.addDataExtension("json5", (contents) => json5.parse(contents));
 
-  // Add blog data collection
-  eleventyConfig.addCollection("blog", (collectionApi) => {
-    return collectionApi.getFilteredByGlob("src/blog/*.md");
-  });
-
-  // Add filters
-  eleventyConfig.addFilter("date", dateFilter);
-
-  // Add shortcodes
-  eleventyConfig.addShortcode("currentYear", () => new Date().getFullYear());
-
-  // Add passthroughs, global data
+  // Add passthroughs
   addPassthroughs(eleventyConfig);
+
+  // Add global data
   addGlobalData(eleventyConfig);
 
-  // Set custom directories for input, output, includes, and data
+  // Add date filter
+  eleventyConfig.addFilter("date", (date) => {
+    return new Date(date).toLocaleDateString();
+  });
+
+  // Add shortcode for current year
+  eleventyConfig.addShortcode("currentYear", () => {
+    return new Date().getFullYear();
+  });
+
+  // Add blog data collection
+  eleventyConfig.addCollection("blog", (collectionApi) => {
+    return collectionApi
+      .getFilteredByGlob(BLOG_GLOB)
+      .filter(excludeDrafts)
+      .filter(isTodayOrPast);
+  });
+
   return {
     dir: {
       input: "src",
