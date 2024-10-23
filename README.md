@@ -1,5 +1,5 @@
 # Eleventy-DaisyUI-Template
-A custom responsive template for Eleventy using DaisyUI.
+A custom responsive template for Eleventy 3 using DaisyUI.
 
 ## Other custom features
 - Custom 404 page
@@ -14,6 +14,7 @@ A custom responsive template for Eleventy using DaisyUI.
 - Fontawesome icons
 - Accessibility improvements
 - Automatic sitemap generation
+- RSS/Atom feed
 
 ## How to use this template
 1. Clone this repository
@@ -59,6 +60,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 - [Tailwind CSS](https://tailwindcss.com/)
 
 ## Changelog
+
+### 2.0.0
+- Update to Eleventy 3.0.0
+- Update to DaisyUI 4.12.13
+- Add RSS/Atom feed
+
+Eleventy 3 release notes: https://github.com/11ty/eleventy/releases/tag/v3.0.0
+
+DaisyUI 4 release notes: https://daisyui.com/docs/changelog/
+We upgraded from 3.x to 4.x, so be sure to check the 4.0.0 changelog for any breaking changes.
+
+The Atom feed is available at `/feed.xml` and pulls data from the main data file, `_data/site.json5`. The feed includes the title, description, and URL of the site, as well as the title, description, and URL of each blog post.
 
 ### 1.5.0
 - Add blog scheduling and drafts

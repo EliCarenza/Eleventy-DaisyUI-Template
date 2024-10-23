@@ -1,4 +1,5 @@
-const json5 = require("json5");
+const json5 = require('json5');
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const tailwindConfig = require("./tailwind.config.cjs");
 
 const ASSETS_PATH = "src/assets";
@@ -58,6 +59,9 @@ module.exports = function (eleventyConfig) {
       .filter(excludeDrafts)
       .filter(isTodayOrPast);
   });
+
+  // Add RSS Atom feed
+  eleventyConfig.addPlugin(pluginRss);
 
   return {
     dir: {

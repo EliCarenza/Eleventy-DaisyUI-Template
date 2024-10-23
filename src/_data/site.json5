@@ -32,12 +32,13 @@
     { title: "Privacy Policy", url: "/privacy-policy/" },
     { title: "Contact", url: "/contact/" },
     { title: "GitHub", url: "https://github.com/EliCarenza/Eleventy-DaisyUI-Template" },
+    { title: "RSS Feed", url: "/feed.xml" },
   ],
 
   // Author information
   author: {
     name: "John Doe",
-    email: "john.doe@example.com",
+    email: "john.doe@example.com", // Optional
     bio: "John is a web developer and blogger who loves to share his knowledge.",
   },
 
