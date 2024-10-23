@@ -85,6 +85,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 ## Changelog
 
+### 2.0.1
+- Fixes a bug by replacing directional rules with logical CSS properties instead, according to DaisyUI update 4.x
+
 ### 2.0.0
 - Update to Eleventy 3.0.0
 - Update to DaisyUI 4.12.13
