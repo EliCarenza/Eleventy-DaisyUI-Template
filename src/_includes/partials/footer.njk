@@ -4,7 +4,12 @@
       <ul class="flex space-x-4">
         {% for link in site.footerLinks %}
           <li>
-            <a href="{{ link.url }}" class="link link-hover">{{ link.title }}</a>
+            <a href="{{ link.url }}" class="link link-hover">
+              {% if link.title == "RSS Feed" %}
+                <i class="fas fa-rss"></i> 
+              {% endif %}
+              {{ link.title }}
+            </a>
           </li>
           {% if not loop.last %}
             <span aria-hidden="true">|</span>

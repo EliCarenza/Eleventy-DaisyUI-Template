@@ -31,13 +31,14 @@
     { title: "Terms of Service", url: "/terms-of-service/" },
     { title: "Privacy Policy", url: "/privacy-policy/" },
     { title: "Contact", url: "/contact/" },
+    { title: "RSS Feed", url: "/feed.xml" },
     { title: "GitHub", url: "https://github.com/example" },
   ],
 
   // Author information
   author: {
     name: "John Doe",
-    email: "john.doe@example.com",
+    email: "john.doe@example.com", // Optional
     bio: "John is a web developer and designer with a passion for creating beautiful and functional websites.",
   },
 

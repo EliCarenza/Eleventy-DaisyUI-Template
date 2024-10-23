@@ -1,0 +1,34 @@
+---
+permalink: feed.xml
+eleventyExcludeFromCollections: true
+---
+
+{% set site = site %}
+
+<rss version="2.0">
+  <channel>
+    <title>{{ site.name }}</title>
+    <link>{{ site.url }}</link>
+    <description>{{ site.description }}</description>
+    <language>en-us</language>
+    <image>
+      <url>{{ site.meta.ogImage }}</url>
+      <title>{{ site.name }}</title>
+      <link>{{ site.url }}</link>
+    </image>
+    <managingEditor>{{ site.author.email }} ({{ site.author.name }})</managingEditor>
+    <webMaster>{{ site.author.email }} ({{ site.author.name }})</webMaster>
+    <generator>Eleventy</generator>
+    <ttl>60</ttl>
+
+    {% for post in collections.blog %}
+    <item>
+      <title>{{ post.data.title }}</title>
+      <link>{{ site.url }}{{ post.url }}</link>
+      <description>{{ post.templateContent }}</description>
+      <pubDate>{{ post.date | date("r") }}</pubDate>
+      <guid>{{ site.url }}{{ post.url }}</guid>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
