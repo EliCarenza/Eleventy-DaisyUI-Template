@@ -61,6 +61,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 ## Changelog
 
+### 2.1.0
+- Upgrades packages to resolve security vulnerabilities
+- Adds the RSS feed link inside of the head tag for better visibility of the link to RSS Feed readers
+
 ### 2.0.2
 - Minor fix regarding the theming
 
