@@ -38,6 +38,10 @@
         <meta name="twitter:image" content="{{ meta.ogImage }}">
         <meta name="twitter:site" content="@myawesomewebsite">
         <!-- Update with actual Twitter handle -->
+        <link rel="canonical" href="{{ url }}">
+        {% if site.blog %}
+        <link rel="alternative" type="application/rss+xml" title="RSS Feed" href="/feed.xml">
+        {% endif %}
     </head>
     <body>
         {% include "partials/header.njk" %}

@@ -15,7 +15,6 @@ This branch features an elegant and modern professional portfolio template. It i
 The template is fully responsive and includes a theme switcher for light and dark modes.
 
 ## Other custom features
-
 - Custom 404 page
 - Automatic copyright year - never have to update it again
 - Theme control with DaisyUI, and a theme switcher
@@ -31,7 +30,6 @@ The template is fully responsive and includes a theme switcher for light and dar
 - RSS/Atom feed
 
 ## How to use this template
-
 1. Clone this repository
 2. Run `npm install`
 3. Modify the content in the `src` folder - be sure to update the `_data/site.json5` file with your site's information
@@ -41,11 +39,9 @@ The template is fully responsive and includes a theme switcher for light and dar
 ### More information
 
 ### How to use the blog
-
 1. Go into the `_data/site.json5` file and make sure the `blog` value is set to `true`
 2. Create a new markdown file in the `blog` folder
 3. Add the following front matter to the file:
-
 ```markdown
 ---
 title: "First Blog Post"
@@ -54,36 +50,36 @@ author: "John Doe"
 layout: blogPost.njk
 ---
 ```
-
 4. Add your content below the front matter, this will be the content of your blog post
 5. Repeat steps 2-4 for each blog post you want to add
 
 ## Screenshots
-
 ### Homepage
-
 ![Homepage](screenshots/home.png)
 
 ### Mobile
-
 ![Mobile](screenshots/mobile.png)
 
 ## License
-
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
 
 ## Authors
-
 - [Eli Carenza](https://github.com/elicarenza)
 
 ## Acknowledgements
-
 - [Eleventy](https://www.11ty.dev/)
 - [DaisyUI](https://daisyui.com/)
 - [Font Awesome](https://fontawesome.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
 
 ## Changelog
+
+### 2.1.0
+- Upgrades packages to resolve security vulnerabilities
+- Adds the RSS feed link inside of the head tag for better visibility of the link to RSS Feed readers
+
+### 2.0.2
+- Minor fix regarding the theming
 
 ### 2.0.1
 - Fixes a bug by replacing directional rules with logical CSS properties instead, according to DaisyUI update 4.x
@@ -108,26 +104,21 @@ The Atom feed is available at `/feed.xml` and pulls data from the main data file
 - Add sitemap generation
 
 ### 1.3.1
-
 - Update theme toggle to use DaisyUI component
 
 ### 1.3.0
-
 - Add Fontawesome icons
 - Accessibility improvements
 - Example Terms of Service and Privacy Policy pages
 
 ### 1.2.0
-
 - Add about page
 - Add demo contact form page
 
 ### 1.1.0
-
 - Better mobile support in the header
 - Fix the blog post list template
 - Add a "back to the blog" breadcrumb to the blog post template
 
 ### 1.0.0
-
 - Initial release
