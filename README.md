@@ -61,6 +61,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) f
 
 ## Changelog
 
+### 3.0.0
+- Upgrades to DaisyUI 5.0.9 - see [release notes](https://daisyui.com/docs/v5/)
+- Upgrades to TailwindCSS 4.0.17 - see [Tailwind CSS 4 breaking changes](https://tailwindcss.com/docs/upgrade-guide#changes-from-v3)
+- Adds a custom CoPilot configuration file for more accurate suggestions within VSCode
+
 ### 2.1.0
 - Upgrades packages to resolve security vulnerabilities
 - Adds the RSS feed link inside of the head tag for better visibility of the link to RSS Feed readers
