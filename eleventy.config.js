@@ -1,6 +1,5 @@
 const json5 = require('json5');
 const pluginRss = require("@11ty/eleventy-plugin-rss");
-const tailwindConfig = require("./tailwind.config.cjs");
 
 const ASSETS_PATH = "src/assets";
 const ROBOTS_TXT_PATH = "src/robots.txt";
@@ -10,10 +9,6 @@ const BLOG_GLOB = "src/blog/**/*.md";
 function addPassthroughs(config) {
   const paths = [ASSETS_PATH, ROBOTS_TXT_PATH, FAVICON_PATH];
   paths.forEach((path) => config.addPassthroughCopy(path));
-}
-
-function addGlobalData(config) {
-  config.addGlobalData("themes", tailwindConfig.daisyui.themes);
 }
 
 function excludeDrafts(item) {
@@ -38,9 +33,6 @@ module.exports = function (eleventyConfig) {
 
   // Add passthroughs
   addPassthroughs(eleventyConfig);
-
-  // Add global data
-  addGlobalData(eleventyConfig);
 
   // Add date filter
   eleventyConfig.addFilter("date", (date) => {
